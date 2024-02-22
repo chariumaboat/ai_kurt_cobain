@@ -85,4 +85,7 @@ def remove_quotes(input_str):
 
 
 def parse_mention_content(message):
-    return message.split(' ', 1)[1]
+    try:
+        return message.split(' ', 1)[1]
+    except:
+        return message
