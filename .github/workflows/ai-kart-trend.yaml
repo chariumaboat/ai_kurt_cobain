@@ -29,10 +29,10 @@ jobs:
 
       - name: twitter key decode
         env:
-          JSON_DECODE: ${{ secrets.ai_kart_INI }}
+          JSON_DECODE: ${{ secrets.AI_KART_INI }}
 
         run: |
-          echo -n $JSON_DECODE | base64 --decode > ./ai_kart_trends.ini
+          echo -n $JSON_DECODE | base64 --decode > ./ai_kart.ini
 
       - name: pip install
         run: pip install -r requirements.txt
