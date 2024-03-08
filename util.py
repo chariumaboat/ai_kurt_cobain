@@ -4,7 +4,23 @@ from pprint import pprint
 import configparser
 import tweepy
 import random
-import sys
+from bs4 import BeautifulSoup
+import requests
+
+
+def get_bs4(url):
+    html = requests.get(url).content
+    soup = BeautifulSoup(html, 'lxml')
+    return soup
+
+
+def get_trend():
+    trends = []
+    url = 'https://search.yahoo.co.jp/realtime'
+    soup = get_bs4(url)
+    for i in soup.find(id="atkey").find_all("li"):
+        trends.append(i.find("h1").text)
+    return ",".join(trends)
 
 
 def auth_api_v2(envName):
@@ -59,6 +75,19 @@ def ai_create_tweet():
                                                     "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。"},
                                                   {"role": "user",
                                                    "content": randam_text()}
+                                              ])
+    return response
+
+
+def ai_create_tweet_trend():
+    api_key = os.environ.get('gpt_api_key')
+    client = OpenAI(api_key=api_key)
+    response = client.chat.completions.create(model="gpt-3.5-turbo",
+                                              messages=[
+                                                  {"role": "system",
+                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。"},
+                                                  {"role": "user",
+                                                   "content": f'今日のトレンドは、{get_trend()}です。140文字で世相をズバッと発言してください。'}
                                               ])
     return response
 
