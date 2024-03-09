@@ -85,9 +85,9 @@ def ai_create_tweet_trend():
     response = client.chat.completions.create(model="gpt-3.5-turbo",
                                               messages=[
                                                   {"role": "system",
-                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。"},
+                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。発言は140文字以内でまとめなければならない。"},
                                                   {"role": "user",
-                                                   "content": f'今日のトレンドは、{get_trend()}です。140文字で世相をズバッと発言してください。'}
+                                                   "content": f'今日のトレンドは、{get_trend()}です。140文字のツイートで世相をズバッと発言してください。'}
                                               ])
     return response
 
@@ -98,7 +98,7 @@ def ai_create_discord(message):
     response = client.chat.completions.create(model="gpt-3.5-turbo",
                                               messages=[
                                                   {"role": "system",
-                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。人を小馬鹿にし、調子に乗った感じで発言しなければならない。"},
+                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。技術的な話題に関して、人を小馬鹿にし、調子に乗った感じで実は丁寧に教えてなければならない"},
                                                   {"role": "user",
                                                    "content": f'{message}とファンから言われた、尊大なロックスターのようにリプライを返しなさい。'}
                                               ])
