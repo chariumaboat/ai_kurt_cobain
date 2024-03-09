@@ -85,9 +85,9 @@ def ai_create_tweet_trend():
     response = client.chat.completions.create(model="gpt-3.5-turbo",
                                               messages=[
                                                   {"role": "system",
-                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。発言は140文字以内でまとめなければならない。"},
+                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。発言は尊大で傲慢になるべくヘイトを買うように煽り口調でコメントし、140文字以内でまとめなければならない。"},
                                                   {"role": "user",
-                                                   "content": f'今日のトレンドは、{get_trend()}です。140文字のツイートで世相をズバッと発言してください。'}
+                                                   "content": f'今日のトレンドは、{get_trend()}です。'}
                                               ])
     return response
 
