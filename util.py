@@ -69,7 +69,7 @@ def randam_text():
 def ai_create_tweet():
     api_key = os.environ.get('gpt_api_key')
     client = OpenAI(api_key=api_key)
-    response = client.chat.completions.create(model="gpt-4-turbo",
+    response = client.chat.completions.create(model="gpt-3.5-turbo",
                                               messages=[
                                                   {"role": "system",
                                                     "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。"},
@@ -95,7 +95,7 @@ def ai_create_tweet_trend():
 def ai_create_discord(message):
     api_key = os.environ.get('gpt_api_key')
     client = OpenAI(api_key=api_key)
-    response = client.chat.completions.create(model="gpt-3.5-turbo",
+    response = client.chat.completions.create(model="gpt-4o",
                                               messages=[
                                                   {"role": "system",
                                                     "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。人を小馬鹿にし、調子に乗った感じで発言しなければならない"},
