@@ -21,6 +21,10 @@ async def on_ready():
 async def reply(message):
     # 発言とメンションを分離して発言だけ取得
     content = parse_mention_content(message.content)
+
+    # 自分自身にメンションが含まれている場合は処理をスキップ
+    if message.author.id == client.user.id:
+        return
     # カートが発言するから発言だけ分離する
     kurt_message = ai_create_discord(content).choices[0].message.content
     reply = f'{message.author.mention} {kurt_message}'
