@@ -10,3 +10,4 @@ export discord_api_key=XXXX;export gpt_api_key=XXXX;python discord_bot.py
 ```bash
 export gpt_api_key=XXXX;python ai_kurt.py
 ```
+
