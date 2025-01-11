@@ -95,10 +95,10 @@ def ai_create_tweet_trend():
 def ai_create_discord(message):
     api_key = os.environ.get('gpt_api_key')
     client = OpenAI(api_key=api_key)
-    response = client.chat.completions.create(model="gpt-4o",
+    response = client.chat.completions.create(model="gpt-3.5-turbo",
                                               messages=[
                                                   {"role": "system",
-                                                   "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。基本的に人を小馬鹿にし、調子に乗った感じで発言しなければならない。"},
+                                                   "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。とても尊大なロックスターとして発言しなければならない。基本的に人を非常に小馬鹿にし、全てを舐めくさった態度で調子に乗った感じで発言しなければならない。"},
                                                   {"role": "user",
                                                    "content": f'{message}とファンから言われた、ロックスターのようにリプライを返しなさい。'}
                                               ])
