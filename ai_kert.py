@@ -21,8 +21,12 @@ if random.randint(1, 5) == 1:
     media_id = api.media_upload(image_path).media_id_string
     print(media_id)
     client = auth_api_v2('ai_kart')
-    post_tweet = client.create_tweet(text=content, media_ids=[media_id])
-    print(post_tweet)
+    try:
+        post_tweet = client.create_tweet(text=content, media_ids=[media_id])
+    except Exception as e:
+        print(e)
+    else:
+        print(post_tweet)
 else:
     client = auth_api_v2('ai_kart')
     post_tweet = client.create_tweet(text=content)
