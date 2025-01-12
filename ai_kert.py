@@ -28,6 +28,9 @@ if random.randint(1, 5) == 1:
     else:
         print(post_tweet)
 else:
-    client = auth_api_v2('ai_kart')
-    post_tweet = client.create_tweet(text=content)
-    print(post_tweet)
+    try:
+        client = auth_api_v2('ai_kart')
+        post_tweet = client.create_tweet(text=content)
+        print(post_tweet)
+    except Exception as e:
+        print(e)
