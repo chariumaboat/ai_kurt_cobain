@@ -1,7 +1,7 @@
 name: ai_kart_trends
 on:
-  schedule:
-    - cron: "15,45 0-14 * * *"
+  # schedule:
+  #   - cron: "15,45 0-14 * * *"
   workflow_dispatch:
 
 jobs:
