@@ -35,7 +35,7 @@ jobs:
           echo -n $JSON_DECODE | base64 --decode > ./ai_kart.ini
 
       - name: pip install
-        run: pip install -r requirements.txt && pip install --upgrade openai
+        run: pip install --upgrade pip && pip install -r requirements.txt && pip install --upgrade openai
 
       - name: schedule_evil_tweet
         if: github.event_name != 'workflow_dispatch'
