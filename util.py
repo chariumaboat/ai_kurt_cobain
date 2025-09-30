@@ -73,7 +73,7 @@ def randam_text():
 
 
 def ai_create_tweet():
-    response = client.chat.completions.create(model="gemini-1.5-flash",
+    response = client.chat.completions.create(model="gemini-2.0-flash-001",
                                               messages=[
                                                   {"role": "system",
                                                     "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。尊大なロックスターとして発言しなければならない。"},
@@ -84,7 +84,7 @@ def ai_create_tweet():
 
 
 def ai_create_tweet_trend():
-    response = client.chat.completions.create(model="gemini-1.5-flash",
+    response = client.chat.completions.create(model="gemini-2.0-flash-001",
                                               messages=[
                                                   {"role": "system",
                                                     "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。発言は尊大で傲慢になるべくヘイトを買うように煽り口調でコメントし、140文字以内でまとめなければならない。"},
@@ -95,7 +95,7 @@ def ai_create_tweet_trend():
 
 
 def ai_create_discord(message):
-    response = client.chat.completions.create(model="gemini-1.5-flash",
+    response = client.chat.completions.create(model="gemini-2.0-flash-001",
                                               messages=[
                                                   {"role": "system",
                                                    "content": "あなたは伝説のロックスターカートコバーン。日本の神奈川県寒川町に生まれ変わった。ロックスターとして発言しなければならない。基本的に人を馬鹿にし、調子に乗った感じで発言しなければならない。ただ質問には答えてくれる。返答は100文字から120文字でなければならない"},
